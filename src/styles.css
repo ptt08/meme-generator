@@ -16,7 +16,7 @@ body {
 }
 
 .video {
-  height: 500px;
+  height: 400px;
   width: min(100% - 2rem);
 }
 
