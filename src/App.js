@@ -19,7 +19,9 @@ function Loader() {
 export default function App() {
   const [videoUrl, setVideoUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const corsProxy = "https://warm-cove-12906-2904f00bb499.herokuapp.com/";
+
+  // Make sure to setup and use your own cors proxy server
+  const corsProxy = process.env.REACT_APP_CORS_PROXY;
 
   async function fetchData() {
     try {
@@ -39,21 +41,6 @@ export default function App() {
   function handleClick() {
     fetchData();
   }
-
-  // useEffect(function () {
-  //   async function fetchData() {
-  //     try {
-  //       const res = await fetch(
-  //         "https://cors-anywhere.herokuapp.com/https://api.thedailyshitpost.net/random"
-  //       );
-  //       const { url } = await res.json();
-  //       setVideoUrl(url);
-  //     } catch (err) {
-  //       console.error(err);
-  //     }
-  //   }
-  //   fetchData();
-  // }, []);
 
   return (
     <div className="container">
